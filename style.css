@@ -1,248 +1,341 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-body {
-  background: #050505;
-  overflow-x: hidden;
-  color: white;
-  min-height: 100vh;
+body{
+  background:#050505;
+  overflow-x:hidden;
+  color:white;
+  min-height:100vh;
+  position:relative;
 }
 
-/* الخلفية المتحركة */
-.background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
+/* الخلفية */
+
+.background{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+  overflow:hidden;
 }
 
-.line {
-  position: absolute;
-  width: 2px;
-  height: 200px;
-  background: linear-gradient(transparent, #00ffcc, transparent);
-  animation: move 6s linear infinite;
-  opacity: 0.5;
+.line{
+  position:absolute;
+  width:2px;
+  height:200px;
+  background:
+  linear-gradient(
+  transparent,
+  #00ffcc,
+  transparent);
+
+  animation:move 6s linear infinite;
+
+  opacity:0.5;
 }
 
-@keyframes move {
-  0% {
-    transform: translateY(-200px);
+@keyframes move{
+
+  0%{
+    transform:translateY(-200px);
   }
-  100% {
-    transform: translateY(120vh);
+
+  100%{
+    transform:translateY(120vh);
   }
+
 }
 
 /* الهيدر */
-header {
-  text-align: center;
-  padding: 50px 20px 20px;
+
+header{
+  text-align:center;
+  padding:60px 20px;
 }
 
-header h1 {
-  font-size: 55px;
-  color: #00ffcc;
-  margin-bottom: 10px;
-  text-shadow: 0 0 15px #00ffcc;
+/* About Me */
+
+.about-title{
+
+  font-size:70px;
+
+  color:aqua;
+
+  margin-bottom:30px;
+
+  text-shadow:0 0 20px aqua;
+
+  letter-spacing:3px;
 }
 
-.sub-header {
-  color: #bbb;
-  font-size: 18px;
+.about-box{
+
+  width:80%;
+
+  max-width:900px;
+
+  margin:auto;
+
+  padding:35px;
+
+  border-radius:25px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 0 20px rgba(0,255,255,0.2);
 }
 
-/* المقدمة */
-.intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px auto;
-  padding: 30px 20px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 25px;
-  border: 1px solid rgba(0, 255, 204, 0.3);
-  backdrop-filter: blur(5px);
+.about-box p{
+
+  color:#ddd;
+
+  font-size:22px;
+
+  line-height:2;
 }
 
-.intro-line {
-  display: block;
-  font-size: 18px;
-  color: #ddd;
-  line-height: 2.2;
+/* الأدوات */
+
+.tools{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:40px;
+
+  padding:50px 0;
 }
 
-.intro-line:first-child {
-  font-size: 22px;
-  color: #00ffcc;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* الكروت */
+
+.tool-card{
+
+  width:700px;
+
+  padding:35px;
+
+  border-radius:25px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 0 20px rgba(0,255,204,0.1);
+
+  transition:0.3s;
+
+  transform:translateX(80px);
 }
 
-/* قائمة الأدوات - تحت بعضها */
-.tools-list {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
+.tool-card:hover{
 
-/* كل أداة - نفس شكل الصورة */
-.tool-item {
-  background: rgba(15, 15, 25, 0.85);
-  border: 1px solid rgba(0, 255, 204, 0.25);
-  border-radius: 24px;
-  padding: 30px;
-  backdrop-filter: blur(8px);
-  transition: 0.3s;
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
-}
+  transform:
+  translateX(80px)
+  translateY(-8px);
 
-.tool-item:hover {
-  transform: translateY(-5px);
-  border-color: #00ffcc;
-  box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+  border-color:#00ffcc;
+
+  box-shadow:
+  0 0 30px rgba(0,255,204,0.4);
 }
 
 /* عنوان الأداة */
-.tool-name {
-  font-size: 26px;
-  color: #00ffcc;
-  margin-bottom: 15px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid rgba(0, 255, 204, 0.3);
-  display: inline-block;
+
+.tool-number{
+
+  color:aqua;
+
+  font-size:22px;
+
+  margin-bottom:15px;
 }
 
-/* الوصف */
-.tool-desc {
-  color: #ddd;
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 25px;
-  padding: 5px 0;
+.tool-card h2{
+
+  color:#00ffcc;
+
+  font-size:35px;
+
+  margin-bottom:20px;
 }
 
-/* مكان الفيديو - مش كبير */
-.video-place {
-  margin: 20px 0 25px 0;
+.tool-card p{
+
+  color:#ccc;
+
+  font-size:20px;
+
+  line-height:2;
+
+  margin-bottom:25px;
 }
 
-.video-box {
-  background: #0a0a0a;
-  border: 1px solid rgba(0, 255, 204, 0.2);
-  border-radius: 16px;
-  padding: 25px 20px;
-  text-align: center;
-  transition: 0.3s;
-  max-width: 400px;
+/* الفيديو */
+
+.video-box{
+
+  width:100%;
+
+  height:180px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:#999;
+
+  font-size:20px;
+
+  margin-bottom:25px;
 }
 
-.video-box:hover {
-  border-color: #00ffcc;
-  background: #0f0f0f;
+/* الزر */
+
+.tool-card a{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  width:100%;
+
+  text-decoration:none;
+
+  background:#00ffcc;
+
+  color:black;
+
+  padding:16px;
+
+  border-radius:15px;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  transition:0.3s;
 }
 
-.video-symbol {
-  font-size: 45px;
-  display: block;
-  margin-bottom: 10px;
+.tool-card a:hover{
+
+  background:white;
+
+  transform:scale(1.03);
 }
 
-.video-box p {
-  color: #aaa;
-  font-size: 14px;
+/* الديسكورد */
+
+.discord-box{
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+  margin-bottom:30px;
 }
 
-/* زر التحميل */
-.tool-download {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  text-decoration: none;
-  background: #00ffcc;
-  color: #000;
-  padding: 14px 20px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 17px;
-  transition: 0.3s;
-  margin-top: 10px;
+.discord-box a{
+
+  background:#5865F2;
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:16px 45px;
+
+  border-radius:15px;
+
+  font-size:22px;
+
+  font-weight:bold;
+
+  transition:0.3s;
+
+  box-shadow:
+  0 0 20px rgba(88,101,242,0.5);
 }
 
-.tool-download:hover {
-  background: #fff;
-  transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+.discord-box a:hover{
+
+  transform:scale(1.05);
+
+  box-shadow:
+  0 0 30px rgba(88,101,242,0.9);
 }
 
-/* ديسكورد */
-.discord-box {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 30px;
+/* الفوتر */
+
+footer{
+
+  text-align:center;
+
+  padding:25px;
+
+  color:#777;
+
+  font-size:18px;
 }
 
-.discord-box a {
-  background: #5865F2;
-  color: white;
-  text-decoration: none;
-  padding: 14px 40px;
-  border-radius: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
-}
+/* الموبايل */
 
-.discord-box a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(88, 101, 242, 0.8);
-}
+@media(max-width:800px){
 
-/* فوتر */
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #777;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 20px;
-}
+  .tool-card{
 
-/* جوال */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 35px;
+    width:90%;
+
+    transform:none;
   }
-  
-  .intro-line {
-    font-size: 14px;
+
+  .tool-card:hover{
+
+    transform:translateY(-8px);
   }
-  
-  .tools-list {
-    width: 95%;
-    gap: 25px;
+
+  .about-title{
+    font-size:50px;
   }
-  
-  .tool-item {
-    padding: 20px;
+
+  .about-box p{
+    font-size:18px;
   }
-  
-  .tool-name {
-    font-size: 22px;
-  }
-  
-  .video-box {
-    max-width: 100%;
-  }
+
 }
