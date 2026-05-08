@@ -10,7 +10,6 @@ body {
   overflow-x: hidden;
   color: white;
   min-height: 100vh;
-  position: relative;
 }
 
 /* الخلفية المتحركة */
@@ -45,14 +44,19 @@ body {
 /* الهيدر */
 header {
   text-align: center;
-  padding: 50px 20px 30px;
+  padding: 50px 20px 20px;
 }
 
 header h1 {
   font-size: 55px;
   color: #00ffcc;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   text-shadow: 0 0 15px #00ffcc;
+}
+
+.sub-header {
+  color: #bbb;
+  font-size: 18px;
 }
 
 /* المقدمة */
@@ -72,7 +76,6 @@ header h1 {
   font-size: 18px;
   color: #ddd;
   line-height: 2.2;
-  letter-spacing: 0.5px;
 }
 
 .intro-line:first-child {
@@ -82,109 +85,107 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* الحاوية الرئيسية - ترتيب عمودي */
-.tools-container {
+/* قائمة الأدوات - تحت بعضها */
+.tools-list {
   width: 90%;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 35px;
 }
 
-/* كل كاتوجري */
-.tool-category {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
+/* كل أداة - نفس شكل الصورة */
+.tool-item {
+  background: rgba(15, 15, 25, 0.85);
+  border: 1px solid rgba(0, 255, 204, 0.25);
+  border-radius: 24px;
   padding: 30px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   transition: 0.3s;
   box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
-  display: flex;
-  flex-direction: column;
 }
 
-.tool-category:hover {
+.tool-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
   border-color: #00ffcc;
+  box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
 }
 
-.tool-title {
+/* عنوان الأداة */
+.tool-name {
   font-size: 26px;
   color: #00ffcc;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
   border-bottom: 2px solid rgba(0, 255, 204, 0.3);
   display: inline-block;
-  align-self: flex-start;
 }
 
-.tool-description {
-  color: #ccc;
-  line-height: 1.8;
+/* الوصف */
+.tool-desc {
+  color: #ddd;
   font-size: 16px;
+  line-height: 1.7;
   margin-bottom: 25px;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
-/* حاوية الفيديو */
-.video-container {
-  width: 100%;
-  margin-bottom: 25px;
+/* مكان الفيديو - مش كبير */
+.video-place {
+  margin: 20px 0 25px 0;
+}
+
+.video-box {
   background: #0a0a0a;
-  border-radius: 15px;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid rgba(0, 255, 204, 0.2);
-}
-
-.video-placeholder {
+  border-radius: 16px;
+  padding: 25px 20px;
   text-align: center;
-  color: #888;
-  font-size: 14px;
-  padding: 20px;
+  transition: 0.3s;
+  max-width: 400px;
 }
 
-.video-placeholder span {
-  font-size: 48px;
+.video-box:hover {
+  border-color: #00ffcc;
+  background: #0f0f0f;
+}
+
+.video-symbol {
+  font-size: 45px;
   display: block;
   margin-bottom: 10px;
-  color: #00ffcc;
-  opacity: 0.6;
+}
+
+.video-box p {
+  color: #aaa;
+  font-size: 14px;
 }
 
 /* زر التحميل */
-.download-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.tool-download {
+  display: inline-block;
   width: 100%;
+  text-align: center;
   text-decoration: none;
   background: #00ffcc;
   color: #000;
   padding: 14px 20px;
   border-radius: 12px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
   transition: 0.3s;
   margin-top: 10px;
-  border: none;
-  cursor: pointer;
 }
 
-.download-btn:hover {
+.tool-download:hover {
   background: #fff;
   transform: scale(1.02);
-  box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
 }
 
-/* الديسكورد */
+/* ديسكورد */
 .discord-box {
   width: 100%;
   display: flex;
@@ -196,20 +197,20 @@ header h1 {
   background: #5865F2;
   color: white;
   text-decoration: none;
-  padding: 15px 40px;
-  border-radius: 15px;
-  font-size: 20px;
+  padding: 14px 40px;
+  border-radius: 16px;
+  font-size: 18px;
   font-weight: bold;
   transition: 0.3s;
-  box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+  box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
 }
 
 .discord-box a:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(88, 101, 242, 0.9);
+  box-shadow: 0 0 30px rgba(88, 101, 242, 0.8);
 }
 
-/* الفوتر */
+/* فوتر */
 footer {
   text-align: center;
   padding: 25px;
@@ -218,7 +219,7 @@ footer {
   margin-top: 20px;
 }
 
-/* للجوال */
+/* جوال */
 @media (max-width: 768px) {
   header h1 {
     font-size: 35px;
@@ -228,16 +229,20 @@ footer {
     font-size: 14px;
   }
   
-  .tool-category {
+  .tools-list {
+    width: 95%;
+    gap: 25px;
+  }
+  
+  .tool-item {
     padding: 20px;
   }
   
-  .tool-title {
-    font-size: 20px;
+  .tool-name {
+    font-size: 22px;
   }
   
-  .download-btn {
-    font-size: 16px;
-    padding: 12px;
+  .video-box {
+    max-width: 100%;
   }
 }
