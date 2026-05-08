@@ -1,0 +1,196 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#050505;
+  overflow-x:hidden;
+  color:white;
+  min-height:100vh;
+  position:relative;
+}
+
+.background{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.line{
+  position:absolute;
+  width:2px;
+  height:200px;
+  background:linear-gradient(transparent,#00ffcc,transparent);
+  animation:move 6s linear infinite;
+  opacity:0.5;
+}
+
+@keyframes move{
+
+  0%{
+    transform:translateY(-200px);
+  }
+
+  100%{
+    transform:translateY(120vh);
+  }
+
+}
+
+header{
+  text-align:center;
+  padding:50px 20px;
+}
+
+header h1{
+  font-size:55px;
+  color:#00ffcc;
+  margin-bottom:15px;
+  text-shadow:0 0 15px #00ffcc;
+}
+
+header p{
+  color:#bbb;
+  font-size:20px;
+}
+
+.tools{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
+
+  gap:25px;
+
+  padding-bottom:50px;
+}
+
+.tool-card{
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  border-radius:20px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+
+  box-shadow:0 0 15px rgba(0,255,204,0.1);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.tool-card:hover{
+  transform:translateY(-8px);
+
+  box-shadow:0 0 25px rgba(0,255,204,0.4);
+
+  border-color:#00ffcc;
+}
+
+.tool-card h2{
+  margin-bottom:15px;
+  color:#00ffcc;
+}
+
+.tool-card p{
+  color:#ccc;
+
+  margin-bottom:25px;
+
+  line-height:1.8;
+
+  min-height:80px;
+}
+
+.tool-card a{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:100%;
+
+  text-decoration:none;
+
+  background:#00ffcc;
+
+  color:black;
+
+  padding:14px;
+
+  border-radius:12px;
+
+  font-weight:bold;
+
+  transition:0.3s;
+}
+
+.tool-card a:hover{
+  background:white;
+
+  transform:scale(1.05);
+}
+
+/* الديسكورد */
+
+.discord-box{
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+  margin-bottom:20px;
+}
+
+.discord-box a{
+  background:#5865F2;
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:15px 40px;
+
+  border-radius:15px;
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  transition:0.3s;
+
+  box-shadow:0 0 20px rgba(88,101,242,0.5);
+}
+
+.discord-box a:hover{
+  transform:scale(1.05);
+
+  box-shadow:0 0 30px rgba(88,101,242,0.9);
+}
+
+footer{
+  text-align:center;
+
+  padding:20px;
+
+  color:#777;
+}
