@@ -118,16 +118,19 @@ header{
   margin-bottom:25px;
 }
 
-/* الفيديو - التعديل الجديد */
+/* الفيديو */
 .video-box{
   width:100%;
-  height:320px;           /* ارتفاع مناسب */
+  height:320px;
   border-radius:20px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.1);
   overflow: hidden;
   position: relative;
   margin-bottom:25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-box iframe{
@@ -137,6 +140,14 @@ header{
   width: 100%;
   height: 100%;
   border: none;
+  z-index: 2;
+}
+
+.video-placeholder{
+  color:#999;
+  font-size:20px;
+  text-align:center;
+  z-index: 1;
 }
 
 /* الزر */
@@ -209,6 +220,6 @@ footer{
     font-size:18px;
   }
   .video-box{
-    height:220px;   /* ارتفاع أقل على الموبايل */
+    height:220px;
   }
 }
